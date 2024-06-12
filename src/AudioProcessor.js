@@ -107,9 +107,9 @@ const AudioProcessor = () => {
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
   const [snr, setSnr] = useState(20);
-  const [filterLength, setFilterLength] = useState(127);
-  const [lowFreq, setLowFreq] = useState(300);
-  const [highFreq, setHighFreq] = useState(3400);
+  const [filterLength, setFilterLength] = useState(315);
+  const [lowFreq, setLowFreq] = useState(100);
+  const [highFreq, setHighFreq] = useState(2500);
   const [filterType, setFilterType] = useState('bandpass');
   const [stepSize, setstepSize] = useState(0.0001);
 
@@ -379,6 +379,7 @@ const AudioProcessor = () => {
         )}
         
         <Button onClick={addNoiseAndFilter}>处理音频</Button>
+  
       </Section>
       {loading && <Loader />}
       <Section>
